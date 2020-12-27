@@ -19,7 +19,7 @@ export default function MainPage() {
     const padding = { paddingRight: "15px"}
 
     useEffect(() => {
-      const url = 'http://127.0.0.1:8000/get_lang';
+      const url = 'http://127.0.0.1:8000/api/get_lang';
       fetch(url)
       .then(response => response.json())
       .then(data => 
@@ -56,7 +56,7 @@ export default function MainPage() {
       const csrftoken = getCookie('csrftoken');
       if(input.code !== "") {
   
-        var url = 'http://127.0.0.1:8000/create_paste/'
+        var url = 'http://127.0.0.1:8000/api/create_paste/'
         
         fetch(url,{
           method:'POST',

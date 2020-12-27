@@ -12,7 +12,7 @@ import TextArea from './TextArea'
     const padding = { paddingRight: "15px"}
 
     useEffect(() => {
-        const url = 'http://127.0.0.1:8000/get/' + match.params.paste_id;
+        const url = 'http://127.0.0.1:8000/api/get/' + match.params.paste_id;
         fetch(url)
         .then(response => response.json())
         .then(data => setPasteData(data)

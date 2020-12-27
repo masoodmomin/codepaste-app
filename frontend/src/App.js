@@ -7,9 +7,9 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 
 function App() {
-  const [dark, setDark] = useState(JSON.parse(localStorage.getItem('theme')))
+  const [dark, setDark] = useState(JSON.parse(localStorage.getItem('dark-theme')))
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(dark));
+    localStorage.setItem('dark-theme', JSON.stringify(dark));
   });
 
   const theme = useMemo(
@@ -17,19 +17,19 @@ function App() {
     createMuiTheme({
       palette: {
         primary: {
-          main: dark ? purple[900] : '#000000',
-          text: dark ? "black" : "white",
+          main: dark ? '#000000' : purple[900],
+          text: dark ? "white": "black",
         },
         secondary: {
-          main: dark ? purple[900] : '#212121',
+          main: dark ? '#212121' :  purple[900],
         },
         background: {
-          default: dark ? "white" : "#000000",
+          default: dark ? "#000000" : "white",
         },
       },
         typography: {
           overline: {
-            color: dark ? "black" : "white",
+            color: dark ? "white" : "black",
             paddingTop: 20,
             marginRight: 10,
           },

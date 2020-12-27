@@ -14,7 +14,7 @@ export default function CustomButton(props) {
 
   return (
     <div>
-      <Button onClick={props.onClick} color="secondary" variant="contained" className={classes.margin}>
+      <Button onClick={props.onClick} href={props.href} color="secondary" variant="contained" className={classes.margin}>
         {props.text}
       </Button>
     </div>
